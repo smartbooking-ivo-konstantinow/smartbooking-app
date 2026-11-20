@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
 }
@@ -5,6 +7,10 @@ plugins {
 android {
     namespace = "com.smartbooking.app"
     compileSdk = 33
+
+    buildFeatures {
+        buildConfig = true
+    }
 
     defaultConfig {
         applicationId = "com.smartbooking.app"
@@ -14,6 +20,13 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        val localProps = Properties()
+        val localFile = rootProject.file("local.properties")
+        if (localFile.exists()) {
+            localFile.inputStream().use { localProps.load(it) }
+        }
+        buildConfigField("String", "BASE_URL", "\"${localProps.getProperty("BASE_URL", "")}\"")
     }
 
     buildTypes {
