@@ -15,7 +15,7 @@ public class SplashActivity extends AppCompatActivity {
 
         TokenManager tokenManager = new TokenManager(this);
 
-        Class<?> destino = tokenManager.getAccess() != null ? MainActivity.class : LoginActivity.class;
+        Class<?> destino = tokenManager.getAccess() != null ? HomeActivity.class : LoginActivity.class;
 
         startActivity(new Intent(this, destino));
         finish();
