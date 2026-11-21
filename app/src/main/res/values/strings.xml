@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SmartBooking</string>
+    <string name="login_titulo">Iniciar sesión</string>
+    <string name="login_email">Email</string>
+    <string name="login_password">Contraseña</string>
+    <string name="login_boton">Ingresar</string>
+    <string name="login_ir_registro">¿No tenés cuenta? Registrate</string>
 </resources>
