@@ -2,6 +2,7 @@ package com.smartbooking.app.data.api;
 
 import com.smartbooking.app.data.model.LoginRequest;
 import com.smartbooking.app.data.model.LoginResponse;
+import com.smartbooking.app.data.model.LogoutRequest;
 import com.smartbooking.app.data.model.PerfilResponse;
 
 
@@ -16,4 +17,7 @@ public interface ApiService {
     Call<LoginResponse> login(@Body LoginRequest request);
     @GET("perfil/")
     Call<PerfilResponse> getPerfil();
+
+    @POST("auth/logout/")
+    Call<Void> logout(@Body LogoutRequest request);
 }

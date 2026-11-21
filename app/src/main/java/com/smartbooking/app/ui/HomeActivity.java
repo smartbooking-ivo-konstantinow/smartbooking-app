@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.smartbooking.app.R;
 import com.smartbooking.app.data.api.ApiClient;
 import com.smartbooking.app.data.api.ApiService;
+import com.smartbooking.app.data.model.LogoutRequest;
 import com.smartbooking.app.data.model.PerfilResponse;
 import com.smartbooking.app.data.repository.TokenManager;
 
@@ -71,8 +72,7 @@ public class HomeActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     mostrarMenu(response.body());
                 } else if (response.code() == 401) {
-                    tokenManager.borrarTokens();
-                    irALogin();
+                    finalizarSesionLocal();
                 } else {
                     Toast.makeText(HomeActivity.this,
                             "Error del servidor. Intentá más tarde.",
@@ -101,6 +101,28 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void cerrarSesion() {
+        btnCerrarSesion.setEnabled(false);
+
+        String refresh = tokenManager.getRefresh();
+        if (refresh == null) {
+            finalizarSesionLocal();
+            return;
+        }
+
+        api.logout(new LogoutRequest(refresh)).enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                finalizarSesionLocal();
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                finalizarSesionLocal();
+            }
+        });
+    }
+
+    private void finalizarSesionLocal() {
         tokenManager.borrarTokens();
         irALogin();
     }
