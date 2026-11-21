@@ -1,8 +1,20 @@
 <resources>
     <string name="app_name">SmartBooking</string>
+
+    <!-- Login -->
     <string name="login_titulo">Iniciar sesión</string>
     <string name="login_email">Email</string>
     <string name="login_password">Contraseña</string>
     <string name="login_boton">Ingresar</string>
     <string name="login_ir_registro">¿No tenés cuenta? Registrate</string>
+
+    <!-- Home -->
+    <string name="home_saludo">Hola, %1$s</string>
+    <string name="home_reservas_admin">Todas las reservas</string>
+    <string name="home_reservas_usuario">Mis reservas</string>
+    <string name="home_usuarios">Usuarios</string>
+    <string name="home_perfil">Mi perfil</string>
+    <string name="home_sala">La sala</string>
+    <string name="home_contacto">Contacto</string>
+    <string name="home_cerrar_sesion">Cerrar sesión</string>
 </resources>
