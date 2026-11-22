@@ -8,6 +8,14 @@
     <string name="login_boton">Ingresar</string>
     <string name="login_ir_registro">¿No tenés cuenta? Registrate</string>
 
+    <!-- Registro -->
+    <string name="registro_titulo">Crear cuenta</string>
+    <string name="registro_nombre">Nombre</string>
+    <string name="registro_apellido">Apellido</string>
+    <string name="registro_password_ayuda">Mínimo 9 caracteres, con letras, números y un carácter especial</string>
+    <string name="registro_confirmar">Confirmar contraseña</string>
+    <string name="registro_boton">Registrarme</string>
+
     <!-- Home -->
     <string name="home_saludo">Hola, %1$s</string>
     <string name="home_reservas_admin">Todas las reservas</string>

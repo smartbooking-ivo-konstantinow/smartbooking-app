@@ -4,6 +4,7 @@ import com.smartbooking.app.data.model.LoginRequest;
 import com.smartbooking.app.data.model.LoginResponse;
 import com.smartbooking.app.data.model.LogoutRequest;
 import com.smartbooking.app.data.model.PerfilResponse;
+import com.smartbooking.app.data.model.RegistroRequest;
 
 
 import retrofit2.Call;
@@ -20,4 +21,7 @@ public interface ApiService {
 
     @POST("auth/logout/")
     Call<Void> logout(@Body LogoutRequest request);
+
+    @POST("auth/register/")
+    Call<Void> registrar(@Body RegistroRequest request);
 }
