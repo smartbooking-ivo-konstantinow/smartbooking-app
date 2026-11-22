@@ -49,6 +49,9 @@ public class LoginActivity extends AppCompatActivity {
         api = ApiClient.getClient(this).create(ApiService.class);
 
         btnIngresar.setOnClickListener(v -> intentarLogin());
+
+        findViewById(R.id.tvIrRegistro).setOnClickListener(v ->
+                startActivity(new Intent(this, RegistroActivity.class)));
     }
 
     private void intentarLogin() {
