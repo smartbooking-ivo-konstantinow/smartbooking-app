@@ -25,4 +25,10 @@
     <string name="home_sala">La sala</string>
     <string name="home_contacto">Contacto</string>
     <string name="home_cerrar_sesion">Cerrar sesión</string>
+
+    <!-- Reservas -->
+    <string name="reservas_vacia">Todavía no hay reservas.</string>
+    <string name="reservas_error">No se pudieron cargar las reservas.</string>
+    <string name="reservas_reintentar">Reintentar</string>
+    <string name="reserva_horario">%1$s a %2$s</string>
 </resources>

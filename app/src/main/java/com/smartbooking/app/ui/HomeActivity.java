@@ -53,7 +53,8 @@ public class HomeActivity extends AppCompatActivity {
 
         View.OnClickListener proximamente = v ->
                 Toast.makeText(this, "Disponible en el próximo sprint", Toast.LENGTH_SHORT).show();
-        btnReservas.setOnClickListener(proximamente);
+        btnReservas.setOnClickListener(v ->
+                startActivity(new Intent(this, ReservasActivity.class)));
         btnUsuarios.setOnClickListener(proximamente);
         btnPerfil.setOnClickListener(proximamente);
         btnSala.setOnClickListener(proximamente);
