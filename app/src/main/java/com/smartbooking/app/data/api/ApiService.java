@@ -5,7 +5,10 @@ import com.smartbooking.app.data.model.LoginResponse;
 import com.smartbooking.app.data.model.LogoutRequest;
 import com.smartbooking.app.data.model.PerfilResponse;
 import com.smartbooking.app.data.model.RegistroRequest;
+import com.smartbooking.app.data.model.Reserva;
 
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -24,4 +27,7 @@ public interface ApiService {
 
     @POST("auth/register/")
     Call<Void> registrar(@Body RegistroRequest request);
+
+    @GET("reservas/")
+    Call<List<Reserva>> getReservas();
 }
